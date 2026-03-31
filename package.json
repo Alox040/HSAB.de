@@ -1,0 +1,49 @@
+{
+  "name": "hsa-seniorenbetreuung",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit --incremental false",
+    "check:repo": "node scripts/repo-health-check.mjs",
+    "check:umlauts": "node scripts/check-german-umlauts.mjs",
+    "check:env": "node scripts/check-env.mjs",
+    "validate:routing": "tsx scripts/validate-routing.ts",
+    "check:all": "npm run typecheck && npm run lint && npm run validate:routing && npm run check:env && npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "ci": "npm run check:repo && npm run check:umlauts && npm run validate:routing && npm run lint && npm run typecheck && npm run build"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "next": "^16.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "resend": "^4.0.0",
+    "typescript-eslint": "^8.56.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "^6",
+    "@testing-library/react": "^16",
+    "@testing-library/user-event": "^14",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "^16.1.6",
+    "jsdom": "^26",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "tsx": "^4",
+    "vitest": "^3"
+  }
+}

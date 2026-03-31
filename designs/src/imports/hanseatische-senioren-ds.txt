@@ -1,0 +1,135 @@
+Create a developer-ready Figma design system and website layout for a German company called
+“Hanseatische Senioren – Alltagsbegleitung”, providing 24-hour senior home care services and placement of caregivers from Eastern Europe.
+
+The design must be structured so it can be easily exported and implemented in VS Code using HTML, CSS, or modern frameworks like React / Next.js / Tailwind.
+
+Do not create only visual layouts.
+Instead create a structured design system with proper developer naming conventions.
+
+Design Style
+
+Hanseatic / North German aesthetic
+
+trustworthy and calm
+
+senior-friendly UI
+
+soft neutral colors (no bright white)
+
+Suggested colors:
+
+maritime navy blue
+
+warm sand / beige
+
+light gray
+
+muted red accent
+
+Figma Structure Requirements
+
+Organize the file in clear developer-friendly pages:
+
+1️⃣ Design System
+
+Color tokens
+
+Typography styles
+
+Spacing system
+
+Grid system
+
+2️⃣ Components
+
+Create reusable components with clear naming:
+
+navbar/main
+
+hero/section
+
+card/service
+
+card/testimonial
+
+button/primary
+
+button/secondary
+
+footer/main
+
+contact/form
+
+All components must use:
+
+Auto Layout
+
+constraints
+
+responsive resizing
+
+Page Layouts
+
+Create responsive layouts for:
+
+Home
+
+Services
+
+How it Works
+
+About
+
+Contact
+
+Use desktop and mobile frames.
+
+Developer Naming Convention
+
+Use names compatible with coding:
+
+section-hero
+section-services
+section-process
+section-testimonials
+section-contact
+
+Export Requirements
+
+Prepare the file so it can be exported easily for development:
+
+Exportable assets:
+
+SVG icons
+
+optimized images
+
+logo
+
+Use vector graphics when possible.
+
+Developer Handoff
+
+Ensure the design is compatible with:
+
+Figma Dev Mode
+
+CSS extraction
+
+Tailwind implementation
+
+React components
+
+Spacing should follow an 8px grid system.
+
+Typography must include:
+
+font sizes
+
+line heights
+
+weights
+
+Goal
+
+The final Figma file should be clean, structured, and ready for developers, so that AI coding tools like Codex, Claude or Cursor can easily convert the design into working code in VS Code.

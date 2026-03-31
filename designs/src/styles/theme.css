@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0f2a3a;
+  --color-secondary: #A84A33;
+  --color-background: #fcfbf9;
+  --color-surface: #F5F1E7;
+  
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: "Merriweather", Georgia, serif;
+}
