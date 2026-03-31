@@ -33,6 +33,10 @@ export type FaqSectionContent = BaseSectionContent & {
 
 export type KontaktSectionContent = BaseSectionContent & {
   details: string[];
+  phone: string;
+  email: string;
+  area: string;
+  notes: string[];
   formTitle: string;
   formDescription: string;
   formLabels: {
@@ -41,15 +45,35 @@ export type KontaktSectionContent = BaseSectionContent & {
     message: string;
     submit: string;
   };
+  formPlaceholders: {
+    name: string;
+    email: string;
+    message: string;
+  };
 };
 
 export type CtaSectionContent = BaseSectionContent & {
   cta: Cta;
 };
 
+export type LeistungenPageSection = {
+  title: string;
+  text: string;
+};
+
+export type LeistungenPageContent = {
+  id: string;
+  eyebrow: string;
+  title: string;
+  intro: string;
+  areas: string[];
+  sections: LeistungenPageSection[];
+};
+
 export type SiteContent = {
   hero: HeroSectionContent;
   leistungen: ListSectionContent;
+  leistungenPage: LeistungenPageContent;
   vorteile: ListSectionContent;
   ablauf: ListSectionContent;
   vertrauen: ListSectionContent;
@@ -83,6 +107,40 @@ export const site: SiteContent = {
       "Haushaltshilfe",
       "Gesellschaft",
       "Entlastung Angehoerige",
+    ],
+  },
+  leistungenPage: {
+    id: "leistungen-uebersicht",
+    eyebrow: "Unsere Leistungen",
+    title: "Alltagsnahe Unterstuetzung fuer Seniorinnen und Senioren",
+    intro:
+      "Wir bieten praktische Hilfe im Alltag, damit Seniorinnen und Senioren moeglichst sicher und ruhig in ihrer gewohnten Umgebung leben koennen.",
+    areas: [
+      "Alltagsbegleitung",
+      "Arzt- und Terminbegleitung",
+      "Einkaufen",
+      "Spaziergaenge",
+      "Gesellschaft und Aktivierung",
+      "Unterstuetzung im Alltag",
+      "Demenzbegleitung",
+      "Entlastung fuer Angehoerige",
+    ],
+    sections: [
+      {
+        title: "Begleitung im Tagesablauf",
+        text:
+          "Wir begleiten bei Terminen, Einkaeufen und Wegen im Alltag. Dabei achten wir auf klare Absprachen, Verlaesslichkeit und ein ruhiges Tempo.",
+      },
+      {
+        title: "Zuwendung und Aktivierung",
+        text:
+          "Gemeinsame Gespraeche, kleine Aktivitaeten und Spaziergaenge helfen dabei, den Tag zu strukturieren und soziale Teilhabe zu erhalten.",
+      },
+      {
+        title: "Unterstuetzung bei Demenz und Entlastung",
+        text:
+          "Bei Demenz begleiten wir mit Geduld und Orientierungshilfen. Gleichzeitig entlasten wir Angehoerige durch verlaessliche Uebernahme vereinbarter Aufgaben.",
+      },
     ],
   },
   vorteile: {
@@ -156,6 +214,14 @@ export const site: SiteContent = {
     title: "Wir nehmen uns Zeit fuer Ihr Anliegen",
     description:
       "Melden Sie sich gern fuer ein ruhiges Erstgespraech und eine erste Einordnung.",
+    phone: "040 000000",
+    email: "kontakt@hanseatische-alltagsbetreuung.de",
+    area: "Hamburg",
+    notes: [
+      "Ihre Anfrage ist unverbindlich.",
+      "Wir melden uns zeitnah bei Ihnen zurueck.",
+      "Sie sprechen mit einer festen Ansprechperson.",
+    ],
     details: [
       "Telefon: 040 000000",
       "E-Mail: kontakt@hanseatische-alltagsbetreuung.de",
@@ -168,7 +234,12 @@ export const site: SiteContent = {
       name: "Name",
       email: "E-Mail",
       message: "Nachricht",
-      submit: "Nachricht senden",
+      submit: "Unverbindlich anfragen",
+    },
+    formPlaceholders: {
+      name: "Ihr Name",
+      email: "Ihre E-Mail-Adresse",
+      message: "Worum geht es Ihnen?",
     },
   },
   cta: {

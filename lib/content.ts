@@ -1,5 +1,61 @@
 // lib/content.ts — Einzige Datenquelle für alle statischen Inhalte der Website
 
+// ─── Über uns ─────────────────────────────────────────────────────────────────
+
+export const ueberUns = {
+  intro: {
+    badge: "Über uns",
+    heading: "Wer hinter HSA steht",
+    description:
+      "Hanseatische Senioren Alltagsbegleitung ist kein Konzern. Es ist ein Hamburger Unternehmen mit einem Namen dahinter: Wolfgang Posdziech.",
+  },
+
+  person: {
+    name: "Wolfgang Posdziech",
+    role: "Gründer & Inhaber",
+    portraitSrc: "/images/wolfgang-posdziech-portrait.jpg",
+    portraitAlt: "Porträt von Wolfgang Posdziech",
+    paragraphs: [
+      "Ich habe HSA gegründet, weil ich überzeugt bin: Gute Betreuung ist Vertrauenssache. Wer einen Senior begleitet, betritt sein Zuhause, seinen Alltag, sein Leben. Das verlangt Sorgfalt — bei der Auswahl der Person, bei der Begleitung der Betreuung, bei jedem Gespräch mit der Familie.",
+      "Jede Betreuungsperson, die ich vermittle, lerne ich persönlich kennen. Nicht über einen Fragebogen, sondern im Gespräch. Ich frage nach Erfahrungen, nach Haltungen, nach dem, was jemanden antreibt. Qualifikationen prüfe ich — aber mindestens genauso wichtig ist mir, ob jemand wirklich zuhören kann.",
+      "Ich beantworte Anfragen selbst. Wenn Sie anrufen, sprechen Sie mit mir. Das ist kein Marketingversprechen, das ist die Realität meines Unternehmens.",
+      "Diese Art zu arbeiten ist langsamer als ein Callcenter. Sie ist dafür ehrlicher.",
+    ],
+  },
+
+  arbeitsweise: {
+    heading: "Wie ich arbeite",
+    items: [
+      {
+        id: "auswahl",
+        title: "Persönliche Auswahl",
+        text: "Keine Betreuungsperson wird vermittelt, ohne dass ich sie kenne — fachlich und als Mensch.",
+      },
+      {
+        id: "erreichbarkeit",
+        title: "Direkte Erreichbarkeit",
+        text: "Kein Callcenter, kein Warteschleifensystem. Anfragen beantworte ich persönlich.",
+      },
+      {
+        id: "begleitung",
+        title: "Laufende Begleitung",
+        text: "Betreuung endet nicht mit dem Vertragsschluss. Ich bleibe Ansprechpartner für Familie und Betreuungsperson.",
+      },
+    ],
+  },
+
+  region: {
+    badge: "Regionale Nähe",
+    heading: "Verwurzelt in Hamburg",
+    text: "Hamburg Nord und West ist nicht nur unser Einsatzgebiet — es ist der Ort, an dem ich lebe und arbeite. Ich kenne die Stadtteile, kenne Einrichtungen und Anlaufstellen. Kurze Wege bedeuten: schnelle Reaktion, persönliche Präsenz, kein Anonymitätsgefühl.",
+  },
+
+  kontakt: {
+    heading: "Sprechen Sie mich an",
+    text: "Ich beantworte alle Anfragen persönlich — meist am selben Tag.",
+  },
+} as const;
+
 // ─── Unternehmensdaten ────────────────────────────────────────────────────────
 
 export const business = {

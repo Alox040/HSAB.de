@@ -16,8 +16,8 @@ export default function Process(): React.JSX.Element {
           serif
         />
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
-          <div className="space-y-4 text-sm text-white/80">
+        <div className="mt-12 grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
+          <div className="space-y-4 text-base text-white/80">
             <p>
               Der Ablauf ist bewusst einfach gehalten. In jedem Schritt haben Sie
               einen klaren Ansprechpartner und genügend Zeit für Ihre Fragen.
@@ -28,16 +28,16 @@ export default function Process(): React.JSX.Element {
             </p>
           </div>
 
-          <ol className="relative mt-4 space-y-6 border-l border-white/15 pl-6 lg:mt-0">
+          <ol className="relative mt-4 space-y-8 border-l border-white/15 pl-6 lg:mt-0">
             {processSteps.map((step) => (
               <li key={step.step} className="relative pl-2">
-                <div className="absolute -left-4 top-1 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-sm font-semibold text-[var(--primary)] shadow-sm">
+                <div className="absolute -left-4 top-1 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-base font-semibold text-[var(--primary)] shadow-sm">
                   {step.step}
                 </div>
-                <h3 className="mb-1 text-base font-semibold text-white">
+                <h3 className="mb-2 text-2xl font-semibold text-white">
                   {step.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-white/80">
+                <p className="text-base leading-relaxed text-white/80">
                   {step.description}
                 </p>
               </li>

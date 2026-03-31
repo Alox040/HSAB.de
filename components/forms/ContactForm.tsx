@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 interface FormData {
@@ -68,7 +69,6 @@ export default function ContactForm(): React.JSX.Element {
   ): void => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error on change
     if (name in fieldErrors) {
       setFieldErrors((prev) => ({ ...prev, [name]: undefined }));
     }
@@ -77,7 +77,6 @@ export default function ContactForm(): React.JSX.Element {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
 
-    // Validate all required fields
     const nameError = validateName(formData.name);
     const phoneError = validatePhone(formData.phone);
     const emailError = validateEmail(formData.email);
@@ -130,10 +129,10 @@ export default function ContactForm(): React.JSX.Element {
     return (
       <div className="rounded-[var(--radius-card)] border border-[var(--secondary)] bg-[var(--secondary-soft)] p-8 text-center">
         <p className="mb-2 text-2xl">✓</p>
-        <h3 className="mb-2 text-lg font-semibold text-[var(--primary)]">
+        <h3 className="mb-2 text-2xl font-semibold text-[var(--primary)]">
           Vielen Dank für Ihre Nachricht!
         </h3>
-        <p className="text-sm text-[var(--text-muted)]">
+        <p className="text-base text-[var(--text-muted)]">
           Wolfgang Posdziech wird sich in Kürze bei Ihnen melden.
         </p>
       </div>
@@ -142,17 +141,13 @@ export default function ContactForm(): React.JSX.Element {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
-      {/* Name */}
       <div>
         <label
           htmlFor="contact-name"
-          className="mb-1 block text-sm font-medium text-[var(--foreground)]"
+          className="mb-1 block text-base font-medium text-[var(--foreground)]"
         >
           Name{" "}
-          <span
-            aria-hidden="true"
-            className="text-[var(--danger)]"
-          >
+          <span aria-hidden="true" className="text-[var(--danger)]">
             *
           </span>
         </label>
@@ -167,7 +162,7 @@ export default function ContactForm(): React.JSX.Element {
           required
           aria-describedby={fieldErrors.name ? "contact-name-error" : undefined}
           aria-invalid={!!fieldErrors.name}
-          className={`w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors focus:ring-2 focus:ring-[var(--primary)] ${
+          className={`w-full rounded-lg border px-4 py-3 text-base outline-none transition-colors focus:ring-2 focus:ring-[var(--primary)] ${
             fieldErrors.name
               ? "border-[var(--danger-border)] bg-[var(--danger-soft)]"
               : "border-[var(--border-soft)] bg-white hover:border-[var(--secondary)]"
@@ -178,24 +173,20 @@ export default function ContactForm(): React.JSX.Element {
           <p
             id="contact-name-error"
             role="alert"
-            className="mt-1 text-xs text-[var(--danger-strong)]"
+            className="mt-1 text-sm text-[var(--danger-strong)]"
           >
             {fieldErrors.name}
           </p>
         )}
       </div>
 
-      {/* Phone */}
       <div>
         <label
           htmlFor="contact-phone"
-          className="mb-1 block text-sm font-medium text-[var(--foreground)]"
+          className="mb-1 block text-base font-medium text-[var(--foreground)]"
         >
           Telefon{" "}
-          <span
-            aria-hidden="true"
-            className="text-[var(--danger)]"
-          >
+          <span aria-hidden="true" className="text-[var(--danger)]">
             *
           </span>
         </label>
@@ -210,7 +201,7 @@ export default function ContactForm(): React.JSX.Element {
           required
           aria-describedby={fieldErrors.phone ? "contact-phone-error" : undefined}
           aria-invalid={!!fieldErrors.phone}
-          className={`w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors focus:ring-2 focus:ring-[var(--primary)] ${
+          className={`w-full rounded-lg border px-4 py-3 text-base outline-none transition-colors focus:ring-2 focus:ring-[var(--primary)] ${
             fieldErrors.phone
               ? "border-[var(--danger-border)] bg-[var(--danger-soft)]"
               : "border-[var(--border-soft)] bg-white hover:border-[var(--secondary)]"
@@ -221,24 +212,20 @@ export default function ContactForm(): React.JSX.Element {
           <p
             id="contact-phone-error"
             role="alert"
-            className="mt-1 text-xs text-[var(--danger-strong)]"
+            className="mt-1 text-sm text-[var(--danger-strong)]"
           >
             {fieldErrors.phone}
           </p>
         )}
       </div>
 
-      {/* Email */}
       <div>
         <label
           htmlFor="contact-email"
-          className="mb-1 block text-sm font-medium text-[var(--foreground)]"
+          className="mb-1 block text-base font-medium text-[var(--foreground)]"
         >
           E-Mail{" "}
-          <span
-            aria-hidden="true"
-            className="text-[var(--danger)]"
-          >
+          <span aria-hidden="true" className="text-[var(--danger)]">
             *
           </span>
         </label>
@@ -253,7 +240,7 @@ export default function ContactForm(): React.JSX.Element {
           required
           aria-describedby={fieldErrors.email ? "contact-email-error" : undefined}
           aria-invalid={!!fieldErrors.email}
-          className={`w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors focus:ring-2 focus:ring-[var(--primary)] ${
+          className={`w-full rounded-lg border px-4 py-3 text-base outline-none transition-colors focus:ring-2 focus:ring-[var(--primary)] ${
             fieldErrors.email
               ? "border-[var(--danger-border)] bg-[var(--danger-soft)]"
               : "border-[var(--border-soft)] bg-white hover:border-[var(--secondary)]"
@@ -264,18 +251,17 @@ export default function ContactForm(): React.JSX.Element {
           <p
             id="contact-email-error"
             role="alert"
-            className="mt-1 text-xs text-[var(--danger-strong)]"
+            className="mt-1 text-sm text-[var(--danger-strong)]"
           >
             {fieldErrors.email}
           </p>
         )}
       </div>
 
-      {/* City (optional) */}
       <div>
         <label
           htmlFor="contact-city"
-          className="mb-1 block text-sm font-medium text-[var(--foreground)]"
+          className="mb-1 block text-base font-medium text-[var(--foreground)]"
         >
           Stadtgebiet{" "}
           <span className="font-normal text-[var(--text-muted)]">(optional)</span>
@@ -287,16 +273,15 @@ export default function ContactForm(): React.JSX.Element {
           value={formData.city}
           onChange={handleChange}
           autoComplete="address-level2"
-          className="w-full rounded-lg border border-[var(--border-soft)] bg-white px-4 py-3 text-sm outline-none transition-colors hover:border-[var(--secondary)] focus:ring-2 focus:ring-[var(--primary)]"
+          className="w-full rounded-lg border border-[var(--border-soft)] bg-white px-4 py-3 text-base outline-none transition-colors hover:border-[var(--secondary)] focus:ring-2 focus:ring-[var(--primary)]"
           placeholder="z. B. Hamburg Nord"
         />
       </div>
 
-      {/* Message (optional) */}
       <div>
         <label
           htmlFor="contact-message"
-          className="mb-1 block text-sm font-medium text-[var(--foreground)]"
+          className="mb-1 block text-base font-medium text-[var(--foreground)]"
         >
           Nachricht{" "}
           <span className="font-normal text-[var(--text-muted)]">(optional)</span>
@@ -307,16 +292,15 @@ export default function ContactForm(): React.JSX.Element {
           value={formData.message}
           onChange={handleChange}
           rows={4}
-          className="w-full rounded-lg border border-[var(--border-soft)] bg-white px-4 py-3 text-sm outline-none transition-colors hover:border-[var(--secondary)] focus:ring-2 focus:ring-[var(--primary)] resize-y"
+          className="w-full resize-y rounded-lg border border-[var(--border-soft)] bg-white px-4 py-3 text-base outline-none transition-colors hover:border-[var(--secondary)] focus:ring-2 focus:ring-[var(--primary)]"
           placeholder="Beschreiben Sie kurz Ihre Situation und was Sie benötigen..."
         />
       </div>
 
-      {/* Error message */}
       {submitState === "error" && errorMessage && (
         <div
           role="alert"
-          className="rounded-lg border border-[var(--danger-border)] bg-[var(--danger-soft)] p-3 text-sm text-[var(--danger-strong)]"
+          className="rounded-lg border border-[var(--danger-border)] bg-[var(--danger-soft)] p-3 text-base text-[var(--danger-strong)]"
         >
           {errorMessage}
         </div>
@@ -330,11 +314,11 @@ export default function ContactForm(): React.JSX.Element {
         {submitState === "loading" ? "Wird gesendet…" : "Anfrage senden"}
       </button>
 
-      <p className="text-center text-xs text-[var(--text-muted)]">
+      <p className="text-center text-sm text-[var(--text-muted)]">
         Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß unserer{" "}
-        <a href="/datenschutz" className="underline hover:text-[var(--primary)]">
+        <Link href="/datenschutz" className="underline hover:text-[var(--primary)]">
           Datenschutzerklärung
-        </a>{" "}
+        </Link>{" "}
         zu.
       </p>
     </form>

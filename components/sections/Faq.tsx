@@ -32,11 +32,11 @@ export default function Faq(): React.JSX.Element {
                   className="flex w-full items-start justify-between gap-4 text-left"
                   aria-expanded={openIndex === index}
                 >
-                  <span className="font-semibold text-[var(--primary)] leading-snug">
+                  <span className="text-xl font-semibold leading-snug text-[var(--primary)]">
                     {faq.question}
                   </span>
                   <span
-                    className="mt-0.5 flex-shrink-0 text-[var(--secondary)] transition-transform duration-200"
+                    className="mt-0.5 flex-shrink-0 text-2xl text-[var(--secondary)] transition-transform duration-200"
                     style={{
                       transform: openIndex === index ? "rotate(45deg)" : "rotate(0deg)",
                     }}
@@ -47,7 +47,7 @@ export default function Faq(): React.JSX.Element {
                 </button>
 
                 {openIndex === index && (
-                  <p className="mt-3 text-sm text-[var(--text-muted)] leading-relaxed">
+                  <p className="mt-3 text-base leading-relaxed text-[var(--text-muted)]">
                     {faq.answer}
                   </p>
                 )}

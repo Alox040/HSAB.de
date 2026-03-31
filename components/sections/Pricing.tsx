@@ -27,19 +27,19 @@ export default function Pricing(): React.JSX.Element {
                 }`}
               >
               {tier.highlighted && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[var(--accent)] px-3 py-0.5 text-xs font-semibold text-white shadow-sm">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[var(--accent)] px-3 py-1 text-sm font-semibold text-white shadow-sm">
                   Beliebteste Wahl
                 </span>
               )}
 
               <div className="mb-6">
                 <h3
-                  className="mb-1 text-lg font-bold text-[var(--primary)]"
+                  className="mb-2 text-2xl font-bold text-[var(--primary)]"
                 >
                   {tier.name}
                 </h3>
                 <p
-                  className="text-sm text-[var(--text-muted)]"
+                  className="text-base text-[var(--text-muted)]"
                 >
                   {tier.description}
                 </p>
@@ -52,7 +52,7 @@ export default function Pricing(): React.JSX.Element {
                   {tier.price}
                 </span>
                 <span
-                  className="ml-1 text-sm text-[var(--text-muted)]"
+                  className="ml-1 text-base text-[var(--text-muted)]"
                 >
                   {tier.priceNote}
                 </span>
@@ -62,7 +62,7 @@ export default function Pricing(): React.JSX.Element {
                 {tier.features.map((feature) => (
                   <li
                     key={feature}
-                    className="flex items-start gap-2 text-sm text-[var(--foreground)]"
+                    className="flex items-start gap-2 text-base text-[var(--foreground)]"
                   >
                     <span className="mt-0.5 flex-shrink-0 text-[var(--accent)]" aria-hidden="true">
                       ✓
@@ -73,8 +73,8 @@ export default function Pricing(): React.JSX.Element {
               </ul>
 
               <Link
-                href="/contact"
-                className={`btn-base block w-full text-sm font-semibold ${
+                href="#kontakt"
+                className={`btn-base block w-full ${
                   tier.highlighted
                     ? "btn-primary"
                     : "btn-secondary"
@@ -86,7 +86,7 @@ export default function Pricing(): React.JSX.Element {
           ))}
         </div>
 
-        <p className="mt-8 text-center text-sm text-[var(--text-muted)]">
+        <p className="mt-8 text-center text-base text-[var(--text-muted)]">
           Alle Preise sind Richtwerte. Das endgültige Angebot erstellen wir nach einem kostenlosen Erstgespräch.
         </p>
       </ContentContainer>
