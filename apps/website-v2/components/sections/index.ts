@@ -1,0 +1,9 @@
+export { default as HeroSection } from "./HeroSection";
+export { default as LeistungenSection } from "./LeistungenSection";
+export { default as VorteileSection } from "./VorteileSection";
+export { default as AblaufSection } from "./AblaufSection";
+export { default as VertrauenSection } from "./VertrauenSection";
+export { default as PreiseSection } from "./PreiseSection";
+export { default as FaqSection } from "./FaqSection";
+export { default as KontaktSection } from "./KontaktSection";
+export { default as CtaSection } from "./CtaSection";
